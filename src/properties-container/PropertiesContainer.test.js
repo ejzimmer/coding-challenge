@@ -3,8 +3,10 @@ import { shallow } from 'enzyme';
 import { PropertiesContainer } from './PropertiesContainer';
 
 describe('PropertiesContainer', () => {
+  const results = ['dodgy-house', 'another-dodgy-house'];
+  const saved = ['awesome-house'];
 
-  const mockFetch = () => ({ json: () => ({ foo: 'bar' }) });
+  const mockFetch = () => ({ json: () => ({ results, saved }) });
 
   beforeEach(() => {
     global.fetch = jest.fn().mockImplementation(mockFetch);
@@ -13,7 +15,9 @@ describe('PropertiesContainer', () => {
   it('fetches the properties', async (done) => {
     const component = shallow(<PropertiesContainer />, { disableLifecycleMethods: true }).instance();
     await component.componentDidMount();
-    expect(component.state).toEqual({ properties: { foo: 'bar' } });
+
+    expect(component.state.results).toBe(results);
+    expect(component.state.saved).toBe(saved);
     done();
   });
 });
