@@ -17,9 +17,9 @@ export class PropertiesContainer extends Component {
 
   render() {
     return (
-      <section className="lists">
+     <section className="lists">
         <SearchResults properties={this.state.results} />
-        <SavedProperties saved={this.state.saved} />
+        <SavedProperties properties={this.state.saved} />
       </section>
     )
   }

@@ -1,9 +1,24 @@
 import React, { Component } from 'react';
+import { Property } from '../property/Property';
 
-export class SearchResultsContainer extends Component {
+export class SearchResults extends Component {
   render() {
-    return (
-      <div>{JSON.stringify(this.props.properties)}</div>
-    )
+    if (this.props.properties) {
+      return (
+        <ul>
+          { this.props.properties.map(property => (
+            <li>
+              <Property agencyColour={ property.agency.brandingColors.primary }
+                        agencyLogo={ property.agency.logo }
+                        image={ property.mainImage }
+                        price={ property.price }
+                        id={ property.id } />
+            </li>
+          ))}
+        </ul>
+      )
+    } else {
+      return <div>Loading...</div>;
+    }
   }
 }
