@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './Property.css';
 
 export class Property extends Component {
   
@@ -8,10 +9,9 @@ export class Property extends Component {
         <header style={ { backgroundColor: this.props.agencyColour } }>
           <img src={ this.props.agencyLogo } />
         </header>
-        <div>
-          <img src={ this.props.image } />
-        </div>
-        <div>{ this.props.price }</div>
+        <img src={ this.props.image } alt="" />
+        <div className="price">{ this.props.price }</div>
+        <button className="action-button">Action</button>
       </article>
     )
   }

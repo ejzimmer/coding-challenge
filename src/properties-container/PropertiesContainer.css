@@ -1,5 +1,5 @@
 .lists {
   display: flex;
-  border: 1px solid #555;
-  border-radius: 5px;
+  width: 80%;
+  margin: auto;
 }

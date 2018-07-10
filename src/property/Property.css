@@ -1,0 +1,42 @@
+.property {
+  border: 2px solid #333;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  position: relative;
+}
+
+.property header {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.property header img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+}
+
+.property > img {
+  width: 100%;
+}
+
+.property .price {
+  padding: .25em;
+}
+
+.action-button {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  padding: .5em;
+  opacity: 0;
+  transition: opacity .3s;
+  cursor: pointer;
+}
+
+.property:hover .action-button {
+  opacity: 1;
+}
