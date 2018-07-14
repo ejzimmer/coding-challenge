@@ -1,11 +1,24 @@
 import React, { Component } from 'react';
 import { Property } from '../property/Property';
 
-export class SavedProperties extends Component {
+export const actionTypes = {
+  save: {
+    text: 'Save',
+    colour: 'green',
+    action: 'save'
+  },
+  remove: {
+    text: 'Remove',
+    colour: 'red',
+    action: 'remove'
+  }
+}
+
+export class PropertiesList extends Component {
   render() {
     return (
       <div>
-        <h2>Saved Properties</h2>
+        <h2>{ this.props.heading }</h2>
         { this.props.properties ? this.getPropertyList() : <div>Loading...</div> }
       </div>
     )
@@ -20,7 +33,8 @@ export class SavedProperties extends Component {
                       agencyLogo={ property.agency.logo }
                       image={ property.mainImage }
                       price={ property.price }
-                      id={ property.id } />
+                      id={ property.id }
+                      action={ this.props.action } />
           </li>
         ))}
       </ul>
