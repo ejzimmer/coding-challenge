@@ -7,10 +7,3 @@ body {
 #root {
   display: flex;
 }
-
-.property-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  width: 45%;
-}

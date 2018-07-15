@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Property } from '../property/Property';
+import './PropertiesList.css';
 
 export const actionTypes = {
   save: {
@@ -17,7 +18,7 @@ export const actionTypes = {
 export class PropertiesList extends Component {
   render() {
     return (
-      <div>
+      <div className="column">
         <h2>{ this.props.heading }</h2>
         { this.props.properties ? this.getPropertyList() : <div>Loading...</div> }
       </div>

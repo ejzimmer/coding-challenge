@@ -3,11 +3,12 @@
   bottom: 0;
   width: 100%;
   border: none;
-  padding: .5em;
   opacity: 0;
   transition: opacity .3s;
   cursor: pointer;
   color: white;
+  font-size: 1.5em;
+  height: 25%;
 }
 
 .property:hover .action-button {

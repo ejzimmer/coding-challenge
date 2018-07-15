@@ -1,0 +1,9 @@
+.column {
+  max-width: 45%;
+}
+
+.property-list {
+  list-style: none;
+  margin-right: 20px;
+  padding: 0;
+}
